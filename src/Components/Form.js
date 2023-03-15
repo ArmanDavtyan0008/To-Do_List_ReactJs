@@ -7,6 +7,7 @@ export default class Form extends React.Component {
         value: "",
         id: v4(),
         list: [],
+        newLis: []
     };
 
     ChangedValue(e) {
