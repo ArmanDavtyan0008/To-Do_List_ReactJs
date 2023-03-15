@@ -1,0 +1,92 @@
+body {
+    background-color: rgba(94, 133, 192, 0.808);
+    color: rgb(4, 15, 48);
+}
+
+.Container {
+    display: flex;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: large;
+    margin-top: 15%;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-bottom: 25%;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    max-width: auto;
+    max-height: auto;
+    cursor: pointer;
+    border: 3px solid rgb(38, 3, 58);
+
+
+}
+
+.input {
+    color: blue ;
+    border: 1px solid;
+    border-color: rgb(44, 17, 71);
+    text-size-adjust: 10px;
+    text-align: center;
+    text-transform: none;
+    text-decoration-line: underline;
+
+}
+
+.red-button {
+    border-color: solid black;
+    color: brown;
+}
+
+.Add-Button {
+    justify-content: center;
+    color: black;
+    width: auto;
+    border: 1px solid;
+    border-color: rgb(44, 17, 71);
+    text-size-adjust: 5px;
+    text-align: center;
+    text-transform: none;
+    text-decoration-line: underline;
+}
+
+.button-edit {
+    text-align: center;
+    align-self: self-end;
+    cursor: pointer;
+    background-color: rgb(94, 214, 94);
+    padding: 2px 5px;
+    border: none;
+    width: auto;
+
+
+
+}
+
+.button-x {
+
+    text-align: center;
+    cursor: pointer;
+    background-color: yellow;
+    padding: 2px 5px;
+    border: none;
+    justify-content: center;
+    color: black;
+    width: auto;
+
+}
+
+.red-button {
+    border: 1px ;
+    border-color: rgb(44, 17, 71);
+    text-size-adjust: 5px;
+    text-align: center;
+    text-transform: none;
+    text-decoration-line: underline;
+}
+
+.li-items {
+    align-items: flex-start;
+    align-self: flex-start;
+}
