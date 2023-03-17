@@ -1,8 +1,8 @@
 {
-  "name": "nptodo",
+  "name": "To-Do_List_ReactJs",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://ArmanDavtyan0008.github.io",
+  "homepage": "https://ArmanDavtyan0008.github.io/To-Do_List_ReactJs",
   "dependencies": {
     "-": "^0.0.1",
     "@testing-library/jest-dom": "^5.16.5",
