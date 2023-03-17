@@ -2,7 +2,7 @@
   "name": "nptodo",
   "version": "0.1.0",
   "private": true,
-  "homepage" :"https://armandavtyan0008.github.io/ArmanDavtyan0008-ArmanDavtyan0008-React-To_do-ap.github.io/",
+  "homepage" :"https://ArmanDavtyan0008.github.io/ArmanDavtyan0008-ArmanDavtyan0008-React-To_do-ap.github.io",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
