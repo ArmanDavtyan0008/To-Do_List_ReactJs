@@ -86,13 +86,7 @@ export default class Form extends React.Component {
       this.setState({
         list: AllItemsList,
         AllList: AllItemsList,
-      })} else {
-const AllItemsList = this.state.AllList;
-      this.setState({
-        list: AllItemsList,
-        AllList: AllItemsList,
-      })
-      }
+      });
     }
   };
   ShowCompleteds = () => {
@@ -141,7 +135,7 @@ const AllItemsList = this.state.AllList;
                     this.CompletedState(item, item.NewItem, item.id)
                   }
                 >
-                  {item.isCompleted ? "Completed "  : "Uncompleted"}
+                  {item.isCompleted ? "Completed " : "Uncompleted"}
                 </button>
 
                 <button
