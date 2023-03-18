@@ -86,7 +86,13 @@ export default class Form extends React.Component {
       this.setState({
         list: AllItemsList,
         AllList: AllItemsList,
-      });
+      })} else {
+const AllItemsList = this.state.AllList;
+      this.setState({
+        list: AllItemsList,
+        AllList: AllItemsList,
+      })
+      }
     }
   };
   ShowCompleteds = () => {
