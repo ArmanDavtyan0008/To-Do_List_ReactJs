@@ -1,9 +1,10 @@
-import React from "react";
-import { v4 } from "uuid";
+import React from 'react';
+import { v4 } from 'uuid';
 
 export default class Form extends React.Component {
   state = {
-    value: "",
+    value: '',
+    value2: '',
     id: v4(),
     list: [],
     showCheckedState: false,
@@ -26,15 +27,16 @@ export default class Form extends React.Component {
     const newList = [...this.state.list];
     newList.push(NewItem);
     this.setState({
-      value: "",
+      value: '',
       list: newList,
+      AllList: newList,
     });
   };
   DeleateAllItems = (e) => {
     const UpdatedList = this.state.list.filter((item) => item.e === false);
     this.setState({
       list: UpdatedList,
-      value: "",
+      value: '',
       AllList: [],
       listOnlyCompleted: [],
       listForNotCompleted: [],
@@ -76,7 +78,7 @@ export default class Form extends React.Component {
     array[index] = newVal;
     this.setState({
       list: array,
-      value: "",
+      value: '',
     });
   };
 
@@ -104,50 +106,73 @@ export default class Form extends React.Component {
     });
   };
 
+  searchedItem = (e) => {
+    this.setState({
+      value2: e.target.value,
+    });
+    const val = this.state.value2;
+    const array = [];
+    const i = 0;
+    this.state.list.filter((items) => {
+      if (val[i] === items.NewItem[i]) {
+        array.push(items);
+        if (val.length > 0) {
+          this.setState({
+            list: array,
+          });
+        }
+        console.log(10);
+      }
+    });
+
+    if (val.length === 0) {
+      this.setState({
+        list: this.state.AllList,
+      });
+    }
+  };
+
   render() {
     return (
-      <div className="Container">
+      <div className='Container'>
         <h1> To-DO list </h1>
         <input
-          className="input"
-          type="text"
-          placeholder="Write Your Todos"
+          className='input'
+          type='text'
+          placeholder='Write Your Todos'
           value={this.state.value}
           onChange={(evt) => this.onChangingValue(evt)}
         />
-        <button onClick={(e) => this.AddItem(e)} className="Add-Button">
-          {" "}
-          <b className="b"> + </b>{" "}
+        <button onClick={(e) => this.AddItem(e)} className='Add-Button'>
+          {' '}
+          <b className='b'> + </b>{' '}
         </button>
-        <button onClick={(e) => this.DeleateAllItems(e)} className="red-button">
+        <button onClick={(e) => this.DeleateAllItems(e)} className='red-button'>
           <b> Clear list </b>
         </button>
         <br />
-        <ol className="Ol-list">
+        <ol className='Ol-list'>
           {this.state.list.map((item) => {
             return (
-              <li key={item.id} className="li-items">
+              <li key={item.id} className='li-items'>
                 <>{item.NewItem}</>
 
                 <button
-                  className="Comp-NotComp"
+                  className='Comp-NotComp'
                   onClick={() =>
                     this.CompletedState(item, item.NewItem, item.id)
-                  }
-                >
-                  {item.isCompleted ? "Completed " : "Uncompleted"}
+                  }>
+                  {item.isCompleted ? 'Completed ' : 'Uncompleted'}
                 </button>
 
                 <button
-                  className="button-x"
-                  onClick={() => this.DeleateItem(item.id)}
-                >
+                  className='button-x'
+                  onClick={() => this.DeleateItem(item.id)}>
                   Deleate
                 </button>
                 <button
-                  className="button-edit"
-                  onClick={() => this.EditingFunction(item, item.id)}
-                >
+                  className='button-edit'
+                  onClick={() => this.EditingFunction(item, item.id)}>
                   Edit
                 </button>
               </li>
@@ -155,24 +180,28 @@ export default class Form extends React.Component {
           })}
         </ol>
         <span>
-          {" "}
-          <button className="btn-All" onClick={(e) => this.ShowAllItems(e)}>
-            {" "}
+          {' '}
+          <input
+            type='text'
+            placeholder='search...'
+            value={this.state.value2}
+            onChange={(e) => this.searchedItem(e)}
+          />
+          <button className='btn-All' onClick={(e) => this.ShowAllItems(e)}>
+            {' '}
             All Items
           </button>
           <button
-            className="btn-Checked"
-            onClick={(e) => this.ShowCompleteds(e)}
-          >
-            {" "}
-            Only Completed Items{" "}
+            className='btn-Checked'
+            onClick={(e) => this.ShowCompleteds(e)}>
+            {' '}
+            Only Completed Items{' '}
           </button>
           <button
-            className="btn-UnChecked"
-            onClick={(e) => this.ShowNotCompleteds(e)}
-          >
-            {" "}
-            Not Completed Items{" "}
+            className='btn-UnChecked'
+            onClick={(e) => this.ShowNotCompleteds(e)}>
+            {' '}
+            Not Completed Items{' '}
           </button>
         </span>
       </div>
